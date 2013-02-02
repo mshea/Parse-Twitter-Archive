@@ -4,7 +4,7 @@
 ## HTML, CSV, Text, JSON, and SQLite3 files containing all of the
 ## tweets contained in the archive that included the keyword.
 ##
-## Please visit http://slyflourish.com/dnd_tip_tweet_archive.html
+## Please visit https://github.com/mshea/Parse-Twitter-Archive
 ## for more information.
 ##
 ## This work is licensed under the Creative Commons Attribution

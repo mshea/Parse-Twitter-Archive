@@ -25,12 +25,12 @@ from datetime import datetime
 from datetime import timedelta
 
 params = {
-    'data_folder': './mshea_tweets/data/js/tweets/',
-    'output_folder': './',
+    'data_folder': './slyflourish_tweets/data/js/tweets/',
+    'output_folder': './slyflourish_tweets/',
     'output_file_name': 'tweets',
-    'twitter_user_id': 'mshea',
+    'twitter_user_id': 'slyflourish',
     'html_header': '<!DOCTYPE html><meta charset="UTF-8">'
-                   '<title>mshea Tweets</title><h1>mshea Tweets</h1><ul>',
+                   '<title>Sly Flourish Tweets</title><h1>Sly Flourish Tweets</h1><ul>',
     'html_footer': '\n</ul>'}
 
 
@@ -48,7 +48,7 @@ def load_json_data_from_files(data_folder):
 
 
 def output_json(json_data):
-    fpath = params['output_folder']+params['output_file_name']+'.js'
+    fpath = params['output_folder']+params['output_file_name']+'.json'
     with open(fpath, 'w') as f:
         f.write(json.dumps(json_data, indent=4))
 

@@ -84,12 +84,13 @@ def output_html(tweets):
         day_string = d.strftime('%d %b %Y %I:%M %p')
         true_time_object = d + timedelta(hours=5)
         time_element = true_time_object.isoformat("T")
+        text = link_https_in_text(item['text'])
         tweet_link = 'http://twitter.com/%s/status/%s'\
                      % (params['twitter_user_id'], item['id'])
         html_output += '<li id=%s>%s - <a href="%s">'\
                        '<time datetime="%s">%s</time></a></li>\n\n' \
                         % (item['id'],
-                           item['text'],
+                           text,
                            tweet_link,
                            time_element,
                            day_string)
@@ -98,17 +99,6 @@ def output_html(tweets):
         f.write(params['html_header'])
         f.write(html_output.encode('utf-8'))
         f.write(params['html_footer'])
-
-
-def output_csv(tweets):
-    csv_output = ''
-    for item in tweets:
-        text = item['text'].replace('"', '""')
-        csv_output += '"%s","%s","%s"\n'\
-                      % (item['id'], item['created_at'], text)
-    fpath = params['output_folder']+params['output_file_name']+'.csv'
-    with open(fpath, "w") as f:
-        f.write(csv_output.encode('utf-8'))
 
 
 def output_text(tweets):
@@ -147,7 +137,6 @@ def main():
     db_path = params['output_folder']+params['output_file_name']+'.sqlite3'
     db_input = load_tweets_from_db(db_path)
     output_html(db_input)
-    output_csv(db_input)
     output_text(db_input)
 
 main()

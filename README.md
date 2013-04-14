@@ -14,13 +14,12 @@ This script parses through the [JSON](http://en.wikipedia.org/wiki/JSON) records
 * A single big text file.
 * A single big JSON file with all the elements included.
 * A SQLite3 database.
-* A CSV file suitable for Microsoft Access.
 
 ## Running This Script
 
 When running this program, it will help you considerably if you have experience running Python programs at the command line. This script requires no external Python modules outside of the core modules included in Python 2.7.
 
-This script is intended to be run at the command line at the same parent directory as the tweet archive. 
+This script is intended to be run at the command line at the same parent directory as the tweet archive.
 
 You can modify the parameters to suit your own file locations and, if you want, your own output HTML headers. You can also filter tweets by seeking a single keyword. In order for tweet links to work properly, you'll want to enter your own Twitter screen name.
 

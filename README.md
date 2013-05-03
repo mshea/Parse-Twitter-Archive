@@ -1,6 +1,6 @@
 # Parse Tweet Archive Python Script
 
-Michael E. Shea, 2 February 2013
+Michael E. Shea, 3 May 2013
 
 ## A Multi-Format Archive of All Your Tweets
 
@@ -13,7 +13,7 @@ This script parses through the [JSON](http://en.wikipedia.org/wiki/JSON) records
 * A single HTML5 page.
 * A single big text file.
 * A single big JSON file with all the elements included.
-* A SQLite3 database.
+* Other fun files like a geo-coord csv file and a list of your most mentioned Twitter users (BFFs).
 
 ## Running This Script
 
@@ -23,9 +23,7 @@ This script is intended to be run at the command line at the same parent directo
 
 You can modify the parameters to suit your own file locations and, if you want, your own output HTML headers. You can also filter tweets by seeking a single keyword. In order for tweet links to work properly, you'll want to enter your own Twitter screen name.
 
-## Spawned To Create an Archive of All My D&D DM Tip Tweets
-
-I wanted to release a full set of my Dungeons and Dragons Dungeon Master tweets from my [SlyFlourish](http://twitter.com/slyflourish) twitter account. You can read more about it at my [dnd Tip Tweet Archive article](http://slyflourish.com/dnd_tip_tweet_archive.html).
+This file can also run as a module for use in other programs.
 
 ## Licensed Under Creative Commons Attribution Non-Commercial Share Alike 3.0
 

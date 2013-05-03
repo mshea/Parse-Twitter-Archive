@@ -13,6 +13,7 @@ This script parses through the [JSON](http://en.wikipedia.org/wiki/JSON) records
 * A single HTML5 page.
 * A single big text file.
 * A single big JSON file with all the elements included.
+* A SQLite3 database.
 * Other fun files like a geo-coord csv file and a list of your most mentioned Twitter users (BFFs).
 
 ## Running This Script

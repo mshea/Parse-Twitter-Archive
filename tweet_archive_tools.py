@@ -1,9 +1,8 @@
 ## Last updated 3 May 2013
 ##
 ## This program takes data from a locally downloaded Twitter archive
+## and outputs HTML, Text, JSON, geo-coords in CSV, and best friends in csv.
 ## See http://blog.twitter.com/2012/12/your-twitter-archive.html
-## It filters on a particular key word if desired and outputs
-## HTML, Text, JSON, geo-coords in CSV, and best friends in csv.
 ##
 ## It can run either as a dedicated program or as a module
 ##

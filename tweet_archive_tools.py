@@ -32,16 +32,16 @@ from itertools import islice, izip
 from collections import Counter
 
 params = {
-    'data_files': './mshea_tweets/data/js/tweets/*.js',
-    'geo_output': 'mshea_geo.csv',
-    'text_output': 'mshea_tweets.txt',
-    'json_output': 'mshea_tweets.json',
-    'bff_output': 'mshea_bffs.csv',
-    'csv_output': 'mshea_tweets.csv',
-    'sqlite3_output': 'mshea_tweets.sqlite3',
-    'html_output': 'mshea_tweets.html',
-    'text_output': 'mshea_tweets.txt',
-    'twitter_user_id': 'mshea',
+    'data_files': './tweets/data/js/tweets/*.js',
+    'geo_output': 'dnd_tip_geo.csv',
+    'text_output': 'dnd_tip_tweets.txt',
+    'json_output': 'dnd_tip_tweets.json',
+    'bff_output': 'dnd_tip_bffs.csv',
+    'csv_output': 'dnd_tip_tweets.csv',
+    'sqlite3_output': 'dnd_tip_tweets.sqlite3',
+    'html_output': 'dnd_tip_tweets.html',
+    'text_output': 'dnd_tip_tweets.txt',
+    'twitter_user_id': 'slyflourish',
 }
 
 
@@ -54,8 +54,8 @@ def load_data(files):
             d = "".join(d)
             j = json.loads(d)
             for tweet in j:
-                items.append(tweet)
-    return items
+				items.append(tweet)
+    return sorted(items, key=lambda k: k['id'])
 
 
 def get_bffs(d):
@@ -77,6 +77,16 @@ def get_bigrams(d):
     for item in output:
         print item
 
+def get_csv_output(d):
+    output = [('id', 'date', 'tweet')]
+    for item in d:
+        output.append((
+                item['id_str'],
+                item['created_at'],
+                item['text'].encode('utf-8')
+                ))
+    return output
+		
 
 def get_geo(d):
     output = [('date', 'tweet', 'lat', 'long')]
@@ -171,8 +181,9 @@ def write_json(json_data, output_file):
 def main():
     d = load_data(params['data_files'])
     #get_bigrams(d)
-    write_csv(get_bffs(d), params['bff_output'], )
+    write_csv(get_bffs(d), params['bff_output'])
     write_csv(get_geo(d), params['geo_output'])
+    write_csv(get_csv_output(d), params['csv_output'])
     write_html(d, params['html_output'])
     write_text(d, params['text_output'])
     write_json(d, params['json_output'])

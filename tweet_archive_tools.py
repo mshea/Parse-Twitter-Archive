@@ -1,10 +1,10 @@
-## Last updated 3 May 2013
+## Last updated 8 Dec 2013
 ##
 ## This program takes data from a locally downloaded Twitter archive
 ## and outputs HTML, Text, JSON, geo-coords in CSV, and best friends in csv.
 ## See http://blog.twitter.com/2012/12/your-twitter-archive.html
 ##
-## It can run either as a dedicated program or as a module
+## It can run either as a dedicated program or as a module.
 ##
 ## Please visit https://github.com/mshea/Parse-Twitter-Archive
 ## for more information.
@@ -12,11 +12,9 @@
 ## This work is licensed under the Creative Commons Attribution
 ## NonCommercial-ShareAlike 3.0 License. You are free to share, copy,
 ## distribute, transmit, remix, and adapt the work as long as you attribute
-## it to Michael E. Shea at http://slyflourish.com/, share the work under
+## it to Michael E. Shea at http://mshea.com/, share the work under
 ## the same license, and do so for non-commercial purposes. To view a copy
 ## of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/.
-##
-## Needs word filter for #dnd tweets
 ##
 
 import glob
@@ -32,16 +30,15 @@ from itertools import islice, izip
 from collections import Counter
 
 params = {
-    'data_files': './tweets/data/js/tweets/*.js',
-    'geo_output': 'dnd_tip_geo.csv',
-    'text_output': 'dnd_tip_tweets.txt',
-    'json_output': 'dnd_tip_tweets.json',
-    'bff_output': 'dnd_tip_bffs.csv',
-    'csv_output': 'dnd_tip_tweets.csv',
-    'sqlite3_output': 'dnd_tip_tweets.sqlite3',
-    'html_output': 'dnd_tip_tweets.html',
-    'text_output': 'dnd_tip_tweets.txt',
-    'twitter_user_id': 'slyflourish',
+    'data_files': './data/js/tweets/*.js',
+    'geo_output': 'mshea_tweets_geo.csv',
+    'text_output': 'mshea_tweets.txt',
+    'json_output': 'mshea_tweets.json',
+    'bff_output': 'mshea_bffs.csv',
+    'csv_output': 'mshea_tweets.csv',
+    'sqlite3_output': 'mshea_tweets.sqlite3',
+    'html_output': 'mshea_tweets.html',
+    'twitter_user_id': 'mshea',
 }
 
 
@@ -113,7 +110,7 @@ def write_html(tweets, output_file):
     html_output = ""
     for item in tweets:
         d = datetime.strptime(item['created_at'],
-                              '%a %b %d %H:%M:%S +0000 %Y')
+                              '%Y-%m-%d %H:%M:%S +0000')
         - timedelta(hours=5)
         day_string = d.strftime('%d %b %Y %I:%M %p')
         true_time_object = d + timedelta(hours=5)

@@ -12,7 +12,7 @@
 ## This work is licensed under the Creative Commons Attribution
 ## NonCommercial-ShareAlike 3.0 License. You are free to share, copy,
 ## distribute, transmit, remix, and adapt the work as long as you attribute
-## it to Michael E. Shea at http://mshea.com/, share the work under
+## it to Michael E. Shea at http://mikeshea.net/, share the work under
 ## the same license, and do so for non-commercial purposes. To view a copy
 ## of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/.
 ##

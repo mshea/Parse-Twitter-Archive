@@ -51,7 +51,7 @@ def load_data(files):
             d = "".join(d)
             j = json.loads(d)
             for tweet in j:
-                r = r
+                r = 1
                 # Comment out above and uncomment below to filter tweets by an re match.
                 # r = re.compile("^#dnd tip:").match(tweet['text'])
                 if r:
@@ -131,6 +131,16 @@ def write_html(tweets, output_file):
                 day_string)
     with open(output_file, "w") as f:
         f.write('<!DOCTYPE html>\n'
+                '<style>'
+                'body {'
+                'max-width:40em; '
+                'margin:auto; '
+                'line-height: 1.5em; '
+                'font-family: Georgia, serif; '
+                'font-size:1.2em;} '
+                'ul {list-style-type: none} '
+                'li {padding:.5em;}'
+                '</style>'
                 '<title>Twitter Archive Output</title>\n'
                 '<ul>\n')
         f.write(html_output.encode('utf-8'))

@@ -31,14 +31,14 @@ from collections import Counter
 
 params = {
     'data_files': './data/js/tweets/*.js',
-    'geo_output': 'mshea_tweets_geo.csv',
-    'text_output': 'mshea_tweets.txt',
-    'json_output': 'mshea_tweets.json',
-    'bff_output': 'mshea_bffs.csv',
-    'csv_output': 'mshea_tweets.csv',
-    'sqlite3_output': 'mshea_tweets.sqlite3',
-    'html_output': 'mshea_tweets.html',
-    'twitter_user_id': 'mshea',
+    'geo_output': 'dnd_tip_tweets_geo.csv',
+    'text_output': 'dnd_tip_tweets.txt',
+    'json_output': 'dnd_tip_tweets.json',
+    'bff_output': 'dnd_tip_bffs.csv',
+    'csv_output': 'dnd_tip_tweets.csv',
+    'sqlite3_output': 'dnd_tip_tweets.sqlite3',
+    'html_output': 'dnd_tip_tweets.html',
+    'twitter_user_id': 'slyflourish',
 }
 
 
@@ -51,7 +51,11 @@ def load_data(files):
             d = "".join(d)
             j = json.loads(d)
             for tweet in j:
-				items.append(tweet)
+                r = r
+                # Comment out above and uncomment below to filter tweets by an re match.
+                # r = re.compile("^#dnd tip:").match(tweet['text'])
+                if r:
+                    items.append(tweet)
     return sorted(items, key=lambda k: k['id'])
 
 
@@ -83,7 +87,7 @@ def get_csv_output(d):
                 item['text'].encode('utf-8')
                 ))
     return output
-		
+        
 
 def get_geo(d):
     output = [('date', 'tweet', 'lat', 'long')]
